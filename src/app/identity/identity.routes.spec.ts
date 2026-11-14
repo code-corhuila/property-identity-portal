@@ -1,4 +1,4 @@
-import { LOGIN_ROUTES, ONBOARDING_ROUTES, REGISTER_ROUTES } from './identity.routes';
+import { LOGIN_ROUTES, ONBOARDING_ROUTES, PROFILE_ROUTES, REGISTER_ROUTES } from './identity.routes';
 
 describe('identity routes', () => {
   it('exposes one screen on each mount point of the container', () => {
@@ -7,5 +7,9 @@ describe('identity routes', () => {
       expect(routes[0].path).toBe('');
       expect(routes[0].component).toBeDefined();
     }
+  });
+
+  it('mounts the profile and becoming a host under /perfil', () => {
+    expect(PROFILE_ROUTES.map((r) => r.path)).toEqual(['', 'convertirme-en-anfitrion']);
   });
 });

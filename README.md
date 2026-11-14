@@ -10,7 +10,7 @@ Documentation: [`property-docs`](https://github.com/code-corhuila/property-docs)
 
 | Federation name | Local address | Exposed module | Exports |
 |---|---|---|---|
-| `identity` | `http://localhost:4204` | `./routes` → `src/app/identity/identity.routes.ts` | `LOGIN_ROUTES` (`/auth/login`), `REGISTER_ROUTES` (`/auth/register`), `ONBOARDING_ROUTES` (`/auth/onboarding`) |
+| `identity` | `http://localhost:4204` | `./routes` → `src/app/identity/identity.routes.ts` | `LOGIN_ROUTES` (`/auth/login`), `REGISTER_ROUTES` (`/auth/register`), `ONBOARDING_ROUTES` (`/auth/onboarding`), `PROFILE_ROUTES` (`/perfil` and `/perfil/convertirme-en-anfitrion`) |
 
 **This portal never calls `provideHttpClient()` and never touches a token.** Mounted in
 `property-front`, it runs inside the container's injector and receives its client with the

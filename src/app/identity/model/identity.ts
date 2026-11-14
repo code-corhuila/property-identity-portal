@@ -10,6 +10,11 @@ export interface UserSummary {
   roles: ('GUEST' | 'HOST' | 'ADMIN')[];
 }
 
+/** How a role reads on screen (the API values stay in English, security-policy.md). */
+export const ROLE_LABEL: Record<UserSummary['roles'][number], string> = {
+  GUEST: 'Huésped', HOST: 'Anfitrión', ADMIN: 'Administrador',
+};
+
 export interface SignedIn {
   user: UserSummary;
 }

@@ -22,6 +22,11 @@ export class IdentityApiService {
       { headers: { 'Idempotency-Key': idempotencyKey } });
   }
 
+  /** E-25: the account of the session (the profile). */
+  me(): Observable<UserSummary> {
+    return this.http.get<UserSummary>('/api/v1/users/me');
+  }
+
   /** E-14: GUEST becomes HOST; the container renews the session so the next token carries it. */
   upgradeToHost(): Observable<UserSummary> {
     return this.http.post<UserSummary>('/api/v1/users/me/upgrade-to-host', {});
