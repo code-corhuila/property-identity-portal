@@ -28,6 +28,9 @@ describe('IdentityApiService', () => {
     expect(register.request.headers.get('Idempotency-Key')).toBe('key-1');
     expect(register.request.body).toEqual({ name: 'Ana', email: 'ana@example.com', password: 'SecurePass123' });
 
+    api.me().subscribe();
+    expect(http.expectOne('/api/v1/users/me').request.method).toBe('GET');
+
     api.upgradeToHost().subscribe();
     expect(http.expectOne('/api/v1/users/me/upgrade-to-host').request.method).toBe('POST');
     http.verify();
